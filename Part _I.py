@@ -111,19 +111,19 @@ def gerber_cor_cov(returns: pd.DataFrame, threshold_value: float=0.5) -> tuple:
 
 
 if __name__ == "__main__":
-  # iShares ETFs of the indexes: ['SPX', 'RTY', 'MXEA', 'MXEF', 'LBUSTRUU', 'LF98TRUU', 'FNERTR', 'XAU', 'SPGSCI']
-  tickers = ['SPY', 'IWM', 'EFA', 'EEM', 'AGG', 'HYG', 'IYR', 'IAU', 'GSG']
-  # earliest date that Yahoo returns price data for all 9 indexes
-  start_date = '2007-04-30'
-  end_date = '2022-12-31'
+    # iShares ETFs of the indexes: ['SPX', 'RTY', 'MXEA', 'MXEF', 'LBUSTRUU', 'LF98TRUU', 'FNERTR', 'XAU', 'SPGSCI']
+    tickers = ['SPY', 'IWM', 'EFA', 'EEM', 'AGG', 'HYG', 'IYR', 'IAU', 'GSG']
+    # earliest date that Yahoo returns price data for all 9 indexes
+    start_date = '2007-04-30'
+    end_date = '2022-12-31'
 
-  df_prices = get_ticker_prices(tickers, start_date, end_date)
-  print(df_prices)
+    df_prices = get_ticker_prices(tickers, start_date, end_date)
+    print(df_prices)
   
-  df_monthly_returns = calc_monthly_returns(df_prices)
-  print(df_monthly_returns)
+    df_monthly_returns = calc_monthly_returns(df_prices)
+    print(df_monthly_returns)
   
-  tuple_gerber = gerber_cor_cov(df_monthly_returns)
+    tuple_gerber = gerber_cor_cov(df_monthly_returns)
 
-  print(tuple_gerber[0]) # Gerber correlation
-  print(tuple_gerber[1]) # Gerber covariance
+    print(tuple_gerber[0]) # Gerber correlation
+    print(tuple_gerber[1]) # Gerber covariance
