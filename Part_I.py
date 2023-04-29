@@ -76,7 +76,7 @@ def gerber_cor_cov(returns: pd.DataFrame, threshold_value: float=0.5) -> tuple:
         cov: DataFrame of the Gerber covariance matrix.
     """
     
-    # notation from paper
+    # notation from paper: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3880054
     r = returns
     c = threshold_value
     s = returns.std(axis=0)
