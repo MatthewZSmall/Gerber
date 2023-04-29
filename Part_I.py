@@ -124,6 +124,5 @@ if __name__ == "__main__":
     print(df_monthly_returns)
   
     tuple_gerber = gerber_cor_cov(df_monthly_returns)
-
     print(tuple_gerber[0]) # Gerber correlation
     print(tuple_gerber[1]) # Gerber covariance
