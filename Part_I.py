@@ -1,3 +1,12 @@
+"""
+Part I:
+Please write a program in Python to compute the Gerber Correlation & Covariance Matrices, per the method described in the attached paper. 
+You can use a set of market index/ETF returns similar to those used in the paper. Be prepared to talk through your solution –
+both programmatically as well as conceptual intuition behind the Gerber procedure.
+
+https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3880054
+"""
+
 import pandas as pd
 import numpy as np
 from yahoofinancials import YahooFinancials
