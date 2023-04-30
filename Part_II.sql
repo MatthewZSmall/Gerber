@@ -8,7 +8,7 @@ WITH ordered AS (
     as_of_date,
     portfolio,
     holding,
-    -- RANK() return 1 for all holdings for the max as_of_date per portfolio
+    -- return 1 for all holdings for the max as_of_date per portfolio
     RANK() OVER(PARTITION BY portfolio ORDER BY as_of_date DESC) AS rn
   FROM
     table)
