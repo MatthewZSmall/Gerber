@@ -5,17 +5,17 @@ You have portfolio data of different recency (as of date) in a database table.  
 
 WITH ordered AS (
   SELECT
-    portfolio,
-    other_fields,
     as_of_date,
-    -- use ROW_NUMBER() instead of RANK() or DENSE_RANK() to avoid ties
-    ROW_NUMBER() OVER(PARTITION BY portfolio ORDER BY as_of_date DESC) AS rn
+    portfolio,
+    holding,
+    -- RANK() return 1 for all holdings for the max as_of_date per portfolio
+    RANK() OVER(PARTITION BY portfolio ORDER BY as_of_date DESC) AS rn
   FROM
     table)
 SELECT
+  as_of_date,
   portfolio,
-  other_fields,
-  as_of_date
+  holding
 FROM
   ordered
 WHERE
