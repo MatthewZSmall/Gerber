@@ -72,7 +72,7 @@ def gerber_cor_cov(returns: pd.DataFrame, threshold_value: float=0.5) -> tuple:
         threshold_value: float to scale standard deviation to determine thresholds.
 
     Returns:
-        cor: numpy array of Gerber correlation matrix.
+        cor: numpy array of the Gerber correlation matrix.
         cov: numpy array of the Gerber covariance matrix.
     """
     
